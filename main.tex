@@ -24,7 +24,7 @@
 \newcommand\monNom{Nom de famille}
 \newcommand\monDepartement{mathématiques et de génie industriel}  % Department
 \newcommand\maDiscipline{Mathématiques appliquées}
-\newcommand\monDiplome{D}        % (M)aîtrise ou (D)octorat / (M)aster or Ph(D)
+\newcommand\monDiplome{}        % (M)aîtrise ou (D)octorat / (M)aster or Ph(D)
 \newcommand\anneeDepot{}    % année de dépôt
 \newcommand\moisDepot{}       % mois de dépôt
 \newcommand\monSexe{}           % "M" ou "F" = Gender
@@ -32,9 +32,15 @@
 \newcommand\mesMotsClef{mot-clefs à insérer}
 
 
-\newcommand\monJury{\PresidentJury{M}{}{}\\
+% arguments :
+% M/F : sex of the member
+% last name
+% first name
+\newcommand\monJury{\PresidentJury{}{}{}\\
 \DirecteurRecherche{M}{Jalbert}{Jonathan}\\
-\MembreJury{F}{}{}\\
+% \CoDi\CoDirecteurRecherche{}{}{}\\
+\MembreJury{}{}{}\\
+% \MembreExterneJury{}{}{}
 }
 
 \hypersetup{
@@ -65,6 +71,7 @@
   chapters/chapter-9b-appendix.tex
 }
 
+% ------------------------------ DOCUMENT -----------------------------------------------------------------------------
 
 \begin{document}
 \bstctlcite{BSTcontrol}
@@ -101,7 +108,7 @@
 
 % Appendix
 \appendix
-\newcommand\Annexe[1]{\annexe{#1}\setcounter{figure}{0}\setcounter{table}{0}\setcounter{footnote}{0}}
+
 \include{chapters/chapter-9b-appendix.tex}
 
 \end{document}
