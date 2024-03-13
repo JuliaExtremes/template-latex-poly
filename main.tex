@@ -1,5 +1,14 @@
 \documentclass[letterpaper, 12pt, oneside, final]{book}
 
+% bstctlcite definition
+\makeatletter
+\def\bstctlcite{\@ifnextchar{\@bstctlcite}{\@bstctlcite[@auxout]}}
+\def\@bstctlcite[#1]#2{\@bsphack
+\@for\@citeb:=#2\do{%
+  \edef\@citeb{\expandafter\@firstofone\@citeb}%
+  \if@filesw\immediate\write\csname #1\endcsname{\string\citation{\@citeb}}\fi}%
+\@esphack}
+\makeatother
 
 \usepackage{poly}
 \usepackage{maquereaux}
@@ -55,6 +64,7 @@
   bibliography/bibliography.tex,
   chapters/chapter-9b-appendix.tex
 }
+
 
 \begin{document}
 \bstctlcite{BSTcontrol}
