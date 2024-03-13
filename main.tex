@@ -1,0 +1,97 @@
+\documentclass[letterpaper, 12pt, oneside, final]{book}
+
+
+\usepackage{poly}
+\usepackage{maquereaux}
+
+
+% ------------------------------ METADATA -----------------------------------------------------------------------------
+
+\newcommand\monSujet{Mémoire de maîtrise}
+\newcommand\monDipl{Maîtrise ès sciences appliquées}
+
+\newcommand\monTitre{Insérer titre ici !}
+\newcommand\monPrenom{Prénom}
+\newcommand\monNom{Nom de famille}
+\newcommand\monDepartement{mathématiques et de génie industriel}  % Department
+\newcommand\maDiscipline{Mathématiques appliquées}
+\newcommand\monDiplome{D}        % (M)aîtrise ou (D)octorat / (M)aster or Ph(D)
+\newcommand\anneeDepot{}    % année de dépôt
+\newcommand\moisDepot{}       % mois de dépôt
+\newcommand\monSexe{}           % "M" ou "F" = Gender
+\newcommand\PageGarde{O}         % "O" ou "N" = Yes or No
+\newcommand\mesMotsClef{mot-clefs à insérer}
+
+
+\newcommand\monJury{\PresidentJury{M}{}{}\\
+\DirecteurRecherche{M}{Jalbert}{Jonathan}\\
+\MembreJury{F}{}{}\\
+}
+
+\hypersetup{
+  pdftitle={\monTitre},
+  pdfsubject={\monSujet},
+  pdfauthor={\monPrenom{} \monNom},
+  pdfkeywords={\mesMotsClef},
+  bookmarksnumbered,
+  pdfstartview={FitV},
+  hidelinks,
+  linktoc=all
+}
+
+% ------------------------------ INCLUDES -----------------------------------------------------------------------------
+
+% to be commented depending on the parts you're working on
+\includeonly{
+  title-page/title-page.tex,
+  thanks/dedication.tex,
+  thanks/thanks.tex,
+  abstract/abstract.tex,
+  tables/tables.tex,
+  tables/abbrev.tex,
+  chapters/chapter-0-introduction.tex,
+  chapters/chapter-0b-review.tex,
+  chapters/chapter-9-conclusion.tex,
+  bibliography/bibliography.tex,
+  chapters/chapter-9b-appendix.tex
+}
+
+\begin{document}
+\bstctlcite{BSTcontrol}
+
+\frontmatter
+
+% Beginning
+\include{title-page/title-page.tex}
+
+
+\pagestyle{pagenumber}
+
+\include{thanks/dedication.tex}
+
+\include{thanks/thanks.tex}
+
+\include{abstract/abstract.tex}
+
+\include{tables/tables.tex}
+\include{tables/abbrev.tex}
+
+\mainmatter
+
+% Chapters
+\include{chapters/chapter-0-introduction.tex}
+
+\include{chapters/chapter-0b-review.tex}
+
+
+\include{chapters/chapter-9-conclusion.tex}
+
+
+\include{bibliography/bibliography.tex}
+
+% Appendix
+\appendix
+\newcommand\Annexe[1]{\annexe{#1}\setcounter{figure}{0}\setcounter{table}{0}\setcounter{footnote}{0}}
+\include{chapters/chapter-9b-appendix.tex}
+
+\end{document}

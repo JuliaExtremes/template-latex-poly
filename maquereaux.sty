@@ -1,0 +1,59 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{maquereaux}
+
+
+% ===============================
+% Dependancies
+% ===============================
+
+\RequirePackage[french]{babel}
+
+
+% ===============================
+% Macros
+% ===============================
+
+
+% Typo
+
+\newcommand\nom[2]{#1 \textsc{#2}}                      % nom
+\newcommand\ofg[1]{\og #1\fg}                           % texte en guillemets à la française
+
+
+
+% Symboles mathématiques
+
+\newcommand\e{\text{e}}                                 % constante e
+\newcommand\diff{\text{d}}                              % différentielle
+
+\newcommand\N{\mathbb{N}}                               % l'ensemble des naturels
+\newcommand\R{\mathbb{R}}                               % l'ensemble des nombre reels
+\newcommand\Mat{\mathcal{M}}                            % l'ensemble des matrices
+
+\newcommand\one{\mathbb{1}}                             % vecteur fait de 1
+
+
+% Fonctions
+% \DeclareMathOperator{\commande}{texte}
+
+
+\newcommand\deriv[2]{\frac{\diff #1}{\diff #2}}         % Derivee
+\newcommand\dpar[2]{\frac{\partial #1}{\partial #2}}    % Derivee partielle
+\newcommand\dnpar[3]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}   % nième derivee partielle
+
+
+\newcommand\norme[1]{\left\Vert #1\right\Vert}          % Norme
+\newcommand\ps[2]{\left\langle #1 | #2\right\rangle}    % Produit scalaire
+\DeclareMathOperator{\grad}{\nabla}                     % Gradient
+
+
+\DeclareMathOperator{\Prob}{\mathbb{P}}                 % Probabilité
+\DeclareMathOperator{\Esp}{\mathbb{E}}                  % Espérance
+\DeclareMathOperator{\Var}{\text{Var}}                  % Variance
+
+\newcommand\Normale{\mathcal{N}}                        % Loi normale
+\DeclareMathOperator{\GEV}{\text{GEV}}                  % Loi GEV (Generalized Extreme Values)
+\DeclareMathOperator{\GPD}{\text{GP}}                   % Loi GPD (Generalized Pareto Distribution)
+
+
+\def\T{^\top}                                           % Transposée
